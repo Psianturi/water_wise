@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../ui/app_navigation_screen/app_navigation_screen.dart';
+import '../ui/home/home__screen.dart';
 import '../ui/intro_screen/intro_screen.dart';
 import '../ui/login_screen/login_screen.dart';
 import '../ui/sign_up_screen/sign_up_screen.dart';
@@ -18,12 +19,15 @@ class AppRoutes {
 
   static const String registerScreen = '/register_screen';
 
+  static const String homeScreen = '/home_screen';
+
   static Map<String, WidgetBuilder> routes = {
     introScreen: (context) => IntroScreen(),
     loginScreen: (context) => LoginScreen(),
     splashScreen: (context) => SplashScreenPage(),
     appNavigationScreen: (context) => AppNavigationScreen(),
     registerScreen: (context) => SignUpScreen(),
+    homeScreen: (context) => HomeScreen(),
 
   };
 }
