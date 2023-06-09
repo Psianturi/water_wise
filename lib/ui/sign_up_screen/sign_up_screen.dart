@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-
 import '../../core/utils/color_constant.dart';
 import '../../core/utils/image_constant.dart';
 import '../../core/utils/size_utils.dart';
+import 'package:mysql1/mysql1.dart';
 import '../../routes/app_routes.dart';
+import 'package:http/http.dart' as http;
 import '../../theme/app_decoration.dart';
 import '../../theme/app_style.dart';
 import '../../widgets/custom_button.dart';
@@ -11,7 +12,12 @@ import '../../widgets/custom_image_view.dart';
 import '../../widgets/custom_text_form_field.dart';
 
 // ignore_for_file: must_be_immutable
-class SignUpScreen extends StatelessWidget {
+class SignUpScreen extends StatefulWidget {
+  @override
+  _SignUpScreenState createState() => _SignUpScreenState();
+}
+class _SignUpScreenState extends State<SignUpScreen> {
+
   TextEditingController firstnameController = TextEditingController();
 
   TextEditingController emailController = TextEditingController();
@@ -19,6 +25,21 @@ class SignUpScreen extends StatelessWidget {
   TextEditingController passwordController = TextEditingController();
 
   GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+
+  void registerUser(String name, String email, String password) async {
+    var url = 'http://localhost/water_wise/lib/register_config.php';
+    var response = await http.post(url as Uri, body: {
+      'name': name,
+      'email': email,
+      'password': password,
+    });
+
+    if (response.statusCode == 200) {
+      print('success');
+    } else {
+      print('failed bye');
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -146,7 +167,7 @@ class SignUpScreen extends StatelessWidget {
                               height: getVerticalSize(51),
                               text: "Create Account",
                               margin: getMargin(left: 37, top: 30, right: 36),
-                              onTap: () {
+                              onTap: () {registerUser(firstnameController.text, emailController.text, passwordController.text);
                               },
                               alignment: Alignment.center),
                           Align(
