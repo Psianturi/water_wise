@@ -2,7 +2,7 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$database = "water_wise_db";
+$database = "water_wise";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $database);
@@ -17,7 +17,7 @@ $name = $_POST['name'];
 $email = $_POST['email'];
 $password = $_POST['password'];
 
-$sql = "INSERT INTO water_wise_db (name, email, password) VALUES ('$name', '$email', '$password')";
+$sql = "INSERT INTO user (name, email, password) VALUES ('$name', '$email', '$password')";
 if ($conn->query($sql) === TRUE) {
     echo "User registered successfully!";
 } else {

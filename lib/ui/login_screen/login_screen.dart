@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:water_supply/widgets/custom_button.dart';
 import 'package:water_supply/widgets/custom_text_form_field.dart';
-
+import 'package:http/http.dart' as http;
 import '../../core/utils/color_constant.dart';
 import '../../core/utils/image_constant.dart';
 import '../../core/utils/size_utils.dart';
@@ -17,6 +17,23 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
+
+  void loginUser(String email, String password) async {
+
+    var url = 'http://192.168.100.4/water_wise/register_config.php';
+    var response = await http.post( Uri.parse(url) ,
+        body: {
+          'email': email,
+          'password': password,
+        });
+
+    if (response.statusCode == 200) {
+      print('success');
+      Navigator.pushNamed(context, AppRoutes.homeScreen);
+    } else {
+      print('failed bye');
+    }
+  }
 
   TextEditingController emailController = TextEditingController();
 
@@ -174,7 +191,9 @@ class _LoginScreenState extends State<LoginScreen> {
                     right: 40,
                   ),
                   onTap: () {
-                    if (_formKey.currentState!.validate()) {
+                    if (_formKey.currentState!.validate() && loginUser(emailController.text, passwordController.text));
+                    ) {
+                      loginUser(emailController.text, passwordController.text);
                       Navigator.pushNamed(context, AppRoutes.homeScreen);
                     }
                   },
