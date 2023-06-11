@@ -39,6 +39,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
     if (response.statusCode == 200) {
       print('success');
       Navigator.pushNamed(context, AppRoutes.homeScreen);
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('Registrasi Berhasil!')),
+      );
     } else {
       print('failed bye');
     }

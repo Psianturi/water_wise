@@ -20,7 +20,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
   void loginUser(String email, String password) async {
 
-    var url = 'http://192.168.100.4/water_wise/register_config.php';
+    var url = 'http://192.168.100.4/water_wise/login_config.php';
     var response = await http.post( Uri.parse(url) ,
         body: {
           'email': email,
@@ -30,6 +30,12 @@ class _LoginScreenState extends State<LoginScreen> {
     if (response.statusCode == 200) {
       print('success');
       Navigator.pushNamed(context, AppRoutes.homeScreen);
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text('Login Successful'),
+          backgroundColor: Colors.blueAccent,
+        ),
+      );
     } else {
       print('failed bye');
     }
@@ -191,10 +197,12 @@ class _LoginScreenState extends State<LoginScreen> {
                     right: 40,
                   ),
                   onTap: () {
-                    if (_formKey.currentState!.validate() && loginUser(emailController.text, passwordController.text));
-                    ) {
+                    if (_formKey.currentState!.validate())
+                     {
                       loginUser(emailController.text, passwordController.text);
-                      Navigator.pushNamed(context, AppRoutes.homeScreen);
+                    } else
+                    {
+                      print("Not Validated");
                     }
                   },
                 ),
