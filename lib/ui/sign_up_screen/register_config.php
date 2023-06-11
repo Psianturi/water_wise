@@ -2,7 +2,7 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$database = "water_wise";
+$database = "water_wise_db";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $database);

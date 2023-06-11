@@ -27,8 +27,10 @@ class _SignUpScreenState extends State<SignUpScreen> {
   GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
   void registerUser(String name, String email, String password) async {
-    var url = 'http://localhost/water_wise/lib/register_config.php';
-    var response = await http.post(url as Uri, body: {
+
+    var url = 'http://192.168.100.4/water_wise/register_config.php';
+    var response = await http.post( Uri.parse(url) ,
+        body: {
       'name': name,
       'email': email,
       'password': password,
@@ -36,6 +38,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
 
     if (response.statusCode == 200) {
       print('success');
+      Navigator.pushNamed(context, AppRoutes.homeScreen);
     } else {
       print('failed bye');
     }
@@ -167,7 +170,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
                               height: getVerticalSize(51),
                               text: "Create Account",
                               margin: getMargin(left: 37, top: 30, right: 36),
-                              onTap: () {registerUser(firstnameController.text, emailController.text, passwordController.text);
+                              onTap: () {
+                                registerUser(firstnameController.text, emailController.text, passwordController.text);
                               },
                               alignment: Alignment.center),
                           Align(
