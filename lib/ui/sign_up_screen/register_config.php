@@ -17,7 +17,7 @@ $name = $_POST['name'];
 $email = $_POST['email'];
 $password = $_POST['password'];
 
-$sql = "INSERT INTO user (name, email, password) VALUES ('$name', '$email', '$password')";
+$sql = "INSERT INTO water_wise_db (name, email, password) VALUES ('$name', '$email', '$password')";
 if ($conn->query($sql) === TRUE) {
     echo "User registered successfully!";
 } else {
@@ -26,4 +26,3 @@ if ($conn->query($sql) === TRUE) {
 
 $conn->close();
 ?>
-Ma
