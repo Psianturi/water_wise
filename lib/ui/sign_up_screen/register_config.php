@@ -25,7 +25,7 @@ if ($conn->query($sql) === TRUE) {
 } else {
     echo "Failed to register user: " . $conn->error;
 }
-$selectId = "SELECT id FROM users WHERE email='abc@bb.com';";
+$selectId = "SELECT id FROM users WHERE email='$email';";
 $result = $conn->query($selectId);
 $row = $result->fetch_assoc();
 $idValue = $row['email'];
