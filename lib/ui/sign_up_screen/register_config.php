@@ -19,7 +19,7 @@ $email = $_POST['email'];
 $password = $_POST['password'];
 $_SESSION['email']=$_POST['email'];
 
-$sql = "INSERT INTO users (fname, lname, uname, password, email, mobile, gender, user_type, user_status) VALUES ('$fname','-','-','$password','$email','0','-','3','1')";
+$sql = "INSERT INTO users (fname, lname, uname, password, email, mobile, gender, user_type, user_status) VALUES ('$fname','-','-','$password','$email',0,'-',3,1)";
 if ($conn->query($sql) === TRUE) {
     echo "User registered successfully!";
 } else {
