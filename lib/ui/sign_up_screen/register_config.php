@@ -1,5 +1,6 @@
 <?php
-$servername = "localhost";
+session_start();
+$servername = "139.180.136.45";
 $username = "root";
 $password = "";
 $database = "water_wise";
@@ -16,8 +17,9 @@ if ($conn->connect_error) {
 $name = $_POST['name'];
 $email = $_POST['email'];
 $password = $_POST['password'];
+$_SESSION['email']=$_POST['email'];
 
-$sql = "INSERT INTO user (name, email, password) VALUES ('$name', '$email', '$password')";
+$sql = "INSERT INTO users (fname, lname, uname, password, email, mobile, gender, user_type, user_status) VALUES ('$fname','-','-','$password','$email','0','-','3','1')";
 if ($conn->query($sql) === TRUE) {
     echo "User registered successfully!";
 } else {
