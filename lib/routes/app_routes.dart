@@ -9,6 +9,9 @@ import '../ui/splash_screen/starting_splash_screen.dart';
 
 
 class AppRoutes {
+  static const String activityScreen = '/activity_screen';
+  static const String estimateScreen = '/estimate_screen';
+
   static const String introScreen = '/intro_screen';
 
   static const String loginScreen = '/login_screen';

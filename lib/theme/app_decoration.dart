@@ -7,6 +7,22 @@ class AppDecoration {
   static BoxDecoration get white => BoxDecoration(
         color: ColorConstant.whiteA700,
       );
+  static BoxDecoration get green => BoxDecoration(
+    color: ColorConstant.blueGray700,
+  );
+
+  static BoxDecoration get fillIndigo800 => BoxDecoration(
+    color: ColorConstant.indigo800,
+  );
+
+  static BoxDecoration get fillBluegray40001 => BoxDecoration(
+    color: ColorConstant.blueGray40001,
+  );
+
+  static BoxDecoration get fillGray50 => BoxDecoration(
+    color: ColorConstant.gray50,
+  );
+
   static BoxDecoration get gradientBluegray700Bluegray500 => BoxDecoration(
         gradient: LinearGradient(
           begin: Alignment(
@@ -50,6 +66,25 @@ class BorderRadiusStyle {
       ),
     ),
   );
+
+  static BorderRadius roundedBorder5 = BorderRadius.circular(
+    getHorizontalSize(
+      5,
+    ),
+  );
+
+  static BorderRadius roundedBorder12 = BorderRadius.circular(
+    getHorizontalSize(
+      12,
+    ),
+  );
+
+  static BorderRadius circleBorder25 = BorderRadius.circular(
+    getHorizontalSize(
+      25,
+    ),
+  );
+
 
   static BorderRadius txtRoundedBorder8 = BorderRadius.circular(
     getHorizontalSize(
