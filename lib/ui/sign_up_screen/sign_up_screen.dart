@@ -28,7 +28,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
 
   void registerUser(String name, String email, String password) async {
 
-    var url = 'http://192.168.100.4/water_wise/register_config.php';
+    var url = 'http://192.168.1.16/water_wise/register_config.php';
     var response = await http.post( Uri.parse(url) ,
         body: {
       'name': name,
