@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mysql1/mysql1.dart';
 import 'package:water_supply/ui/home/widgets/home_item_widget.dart';
-
+import 'package:http/http.dart' as http;
 import '../../app_bar/appbar_circleimage.dart';
 import '../../app_bar/appbar_subtitle.dart';
 import '../../app_bar/appbar_title.dart';
@@ -24,6 +24,33 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+
+  String profile_name = '';
+
+  @override
+  void initState() {
+    super.initState();
+    fetchTextFromBackend();
+  }
+
+  Future<void> fetchTextFromBackend() async {
+    try {
+      var response = await http.get(Uri.parse('http://192.168.1.14/water_wise/profile_name.php'));
+      if (response.statusCode == 200) {
+        setState(() {
+          profile_name = response.body;
+        });
+      } else {
+        setState(() {
+          profile_name = 'Failed to retrieve text.';
+        });
+      }
+    } catch (e) {
+      setState(() {
+        profile_name = 'Failed to retrieve text.';
+      });
+    }
+  }
   TextEditingController dateController = TextEditingController();
 
   @override
@@ -39,7 +66,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     child: Column(
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
-                          AppbarTitle(text: "Hi, Sephie"),
+                          AppbarTitle(text: "Hi, $profile_name"),
                           AppbarSubtitle(
                               text: "Welcome!", margin: getMargin(right: 34))
                         ])),

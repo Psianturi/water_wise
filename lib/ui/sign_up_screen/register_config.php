@@ -28,7 +28,7 @@ if ($conn->query($sql) === TRUE) {
 $selectId = "SELECT id FROM users WHERE email='$email';";
 $result = $conn->query($selectId);
 $row = $result->fetch_assoc();
-$idValue = $row['email'];
+$idValue = $row['id'];
 $idInt = intval($idValue);
 var_dump($idValue);
 
