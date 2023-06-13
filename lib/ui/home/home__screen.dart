@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:mysql1/mysql1.dart';
 import 'package:water_supply/ui/home/widgets/home_item_widget.dart';
 import 'package:http/http.dart' as http;
+import 'package:http_parser/http_parser.dart';
 import '../../app_bar/appbar_circleimage.dart';
 import '../../app_bar/appbar_subtitle.dart';
 import '../../app_bar/appbar_title.dart';
@@ -26,13 +26,16 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
 
   String profile_name = '';
+  String profile_photo ='';
 
   @override
   void initState() {
     super.initState();
     fetchTextFromBackend();
+    fetchTextProfilePhoto();
   }
 
+//fetch cust name
   Future<void> fetchTextFromBackend() async {
     try {
       var response = await http.get(Uri.parse('http://192.168.1.14/water_wise/profile_name.php'));
@@ -51,6 +54,27 @@ class _HomeScreenState extends State<HomeScreen> {
       });
     }
   }
+
+  //cust photo path
+  Future<void> fetchTextProfilePhoto() async {
+    try {
+      var response = await http.get(Uri.parse('http://192.168.1.14/water_wise/profile_photo.php'));
+      if (response.statusCode == 200) {
+        setState(() {
+          profile_photo = response.body;
+        });
+      } else {
+        setState(() {
+          profile_photo = 'Failed to retrieve text.';
+        });
+      }
+    } catch (e) {
+      setState(() {
+        profile_photo = 'Failed to retrieve text.';
+      });
+    }
+  }
+
   TextEditingController dateController = TextEditingController();
 
   @override
@@ -72,7 +96,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         ])),
                 actions: [
                   AppbarCircleimage(
-                      imagePath: ImageConstant.imgGirl,
+                      imagePath: "$profile_photo",
                       margin: getMargin(left: 30, top: 3, right: 30, bottom: 3))
                 ]),
             body: Container(
@@ -328,20 +352,28 @@ class _HomeScreenState extends State<HomeScreen> {
                                                 mainAxisAlignment:
                                                 MainAxisAlignment.start,
                                                 children: [
-                                                  CustomTextFormField(
-                                                      focusNode: FocusNode(),
-                                                      autofocus: true,
-                                                      controller:
-                                                      dateController,
+                                                  TextFormField(
+                                                    focusNode: FocusNode(),
+                                                    autofocus: true,
+                                                    controller: dateController,
+                                                    enabled: false, // Set enabled to false to make it uneditable
+                                                    decoration: InputDecoration(
                                                       hintText: "Insert Date",
-                                                      variant:
-                                                      TextFormFieldVariant
-                                                          .UnderLineGray300,
-                                                      fontStyle:
-                                                      TextFormFieldFontStyle
-                                                          .PoppinsRegular12Gray800,
-                                                      textInputAction:
-                                                      TextInputAction.done),
+                                                      enabledBorder: UnderlineInputBorder(
+                                                        borderSide: BorderSide(color: Colors.grey[300]!),
+                                                      ),
+                                                      focusedBorder: UnderlineInputBorder(
+                                                        borderSide: BorderSide(color: Colors.grey[300]!),
+                                                      ),
+                                                    ),
+                                                    style: TextStyle(
+                                                      fontFamily: 'PoppinsRegular',
+                                                      fontSize: 12,
+                                                      color: Colors.grey[800],
+                                                    ),
+                                                    textInputAction: TextInputAction.done,
+                                                  ),
+
                                                   Padding(
                                                       padding:
                                                       getPadding(top: 12),
