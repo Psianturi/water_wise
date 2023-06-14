@@ -11,8 +11,13 @@ import '../ui/profile_screen/profile_screen.dart';
 import '../ui/update_account_screen/update_account_screen.dart';
 import '../ui/billing_screen/billing_screen.dart';
 import '../ui/view_bill_screen/view_bill_screen.dart';
-
-
+import '../ui/success_transactions_screen/success_transactions_screen.dart';
+import '../ui/activity_trends_screen/activity_trends_screen.dart';
+import '../ui/activity_screen/activity_screen.dart';
+import '../ui/payment_methods_screen/payment_methods_screen.dart';
+import '../ui/contact_us_screen/contact_us_screen.dart';
+import '../ui/estimate_screen/estimate_screen.dart';
+import '../ui/popup_screen/popup_screen.dart';
 
 
 
@@ -31,6 +36,12 @@ class AppRoutes {
   static const String billingScreen = '/billing_screen';
   static const String viewBillScreen = '/view_bill_screen';
   static const String notificationScreen = '/notification_screen';
+  static const String successTransactionsScreen = '/success_transactions_screen';
+  static const String activityTrendsScreen = '/activity_trends_screen';
+  static const String paymentMethodsScreen = '/payment_methods_screen';
+  static const String contactUsScreen = '/contact_us_screen';
+  static const String popUpScreen = '/pop_up_screen';
+
 
 
 
@@ -46,6 +57,13 @@ class AppRoutes {
     billingScreen: (context) => BillingScreen(),
     viewBillScreen: (context) => ViewBillScreen(),
     notificationScreen: (context) => NotificationScreen(),
+    successTransactionsScreen: (context) => SuccessTransactionsScreen(),
+    activityScreen: (context) => ActivityScreen(),
+    activityTrendsScreen: (context) => ActivityTrendsScreen(),
+    paymentMethodsScreen: (context) => PaymentMethodsScreen(),
+    contactUsScreen: (context) => ContactUsScreen(),
+    estimateScreen: (context) => EstimateScreen(),
+    popUpScreen: (context) => PopupScreen(),
 
 
 

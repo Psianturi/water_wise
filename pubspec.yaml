@@ -11,6 +11,8 @@ dependencies:
   intl: ^0.17.0
   mysql1: ^0.20.0
   http: ^0.13.4
+  pin_code_fields: ^7.3.0
+
 
 dev_dependencies:
   flutter_test: 
