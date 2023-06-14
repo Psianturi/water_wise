@@ -97,8 +97,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
             children: [
               //Button
               CustomButton(
-                height: 35  ,
-                width: 240,
+                height: 40 ,
+                width: 250,
                 // width: getHorizontalSize(
                 //   95,
                 // ),
@@ -115,22 +115,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 ),
               ),
 
-              // CustomTextFormField(
-              //   focusNode: FocusNode(),
-              //   autofocus: true,
-              //   controller: dateController,
-              //   hintText: "Update Account",
-              //   margin: getMargin(
-              //     right: 20,
-              //   ),
-              //   variant: TextFormFieldVariant.OutlineBlack9003f,
-              //   shape: TextFormFieldShape.RoundedBorder12,
-              //   padding: TextFormFieldPadding.PaddingAll16,
-              //   fontStyle: TextFormFieldFontStyle.PoppinsSemiBold12,
-              // ),
               CustomButton(
-                height: 38 ,
-                width: 240,
+                height: 40 ,
+                width: 250,
                 // width: getHorizontalSize(
                 //   95,
                 // ),
@@ -147,8 +134,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 ),
               ),
               CustomButton(
-                height: 38 ,
-                width: 240,
+                height: 40 ,
+                width: 250,
                 // width: getHorizontalSize(
                 //   95,
                 // ),
@@ -165,8 +152,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 ),
               ),
               CustomButton(
-                height: 38 ,
-                width: 240,
+                height: 40 ,
+                width: 250,
                 // width: getHorizontalSize(
                 //   95,
                 // ),
