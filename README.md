@@ -20,5 +20,5 @@ samples, guidance on mobile development, and a full API reference.
 ## Tampilan Awal
 
 
-https://github.com/Psianturi/water_wise/assets/42699234/2de55088-dbea-4b37-a956-a263349fb2a4
+https://github.com/Psianturi/water_wise/assets/42699234/4091fc47-c91b-411c-8195-f5836b91b995
 
