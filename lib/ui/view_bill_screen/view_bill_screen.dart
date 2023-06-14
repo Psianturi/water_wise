@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../core/app_export.dart';
+import '../../widget/custom_button.dart';
 import '../../widget/custom_text_form_field.dart';
 
 
@@ -47,7 +48,7 @@ class _ViewBillScreenState extends State <ViewBillScreen> {
                                       letterSpacing:
                                       getHorizontalSize(1.0))))),
                       Container(
-                          margin: getMargin(left: 14, top: 25, right: 14),
+                          margin: getMargin(left: 14, top: 10, right: 14),
                           padding: getPadding(all: 16),
                           decoration: AppDecoration.outlineBlack9003f.copyWith(
                               borderRadius: BorderRadiusStyle.roundedBorder12),
@@ -67,13 +68,13 @@ class _ViewBillScreenState extends State <ViewBillScreen> {
                                             letterSpacing:
                                             getHorizontalSize(1.0)))),
                                 Padding(
-                                    padding: getPadding(top: 13),
+                                    padding: getPadding(top: 7),
                                     child: Divider(
                                         height: getVerticalSize(1),
                                         thickness: getVerticalSize(1),
                                         color: ColorConstant.blueGray40001)),
                                 Padding(
-                                    padding: getPadding(top: 10),
+                                    padding: getPadding(top: 7),
                                     child: Row(
                                         mainAxisAlignment:
                                         MainAxisAlignment.spaceBetween,
@@ -393,7 +394,13 @@ class _ViewBillScreenState extends State <ViewBillScreen> {
                                             .copyWith(
                                             letterSpacing:
                                             getHorizontalSize(1.0))))
-                              ]))
+                              ])),
+                      CustomButton(
+                          height: getVerticalSize(51),
+                          width: getHorizontalSize(145),
+                          text: "Pay",
+                          margin: getMargin(top: 51, bottom: 5),
+                          alignment: Alignment.center),
                     ]))));
   }
 

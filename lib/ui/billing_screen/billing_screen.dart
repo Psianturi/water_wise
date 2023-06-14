@@ -47,7 +47,7 @@ class _BillingScreenState extends State<BillingScreen> {
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
                       Padding(
-                          padding: getPadding(left: 147, top: 51),
+                          padding: getPadding(left: 160, top: 38),
                           child: Text("Balance",
                               overflow: TextOverflow.ellipsis,
                               textAlign: TextAlign.left,
@@ -55,8 +55,8 @@ class _BillingScreenState extends State<BillingScreen> {
                                   .copyWith(
                                   letterSpacing: getHorizontalSize(1.0)))),
                       Padding(
-                          padding: getPadding(left: 150, top: 4),
-                          child: Text("200 SGD",
+                          padding: getPadding(left: 165w, top: 4),
+                          child: Text("200",
                               overflow: TextOverflow.ellipsis,
                               textAlign: TextAlign.left,
                               style: AppStyle.txtPoppinsSemiBold30Gray800
