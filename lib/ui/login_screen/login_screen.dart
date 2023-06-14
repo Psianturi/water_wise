@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:water_supply/widgets/custom_button.dart';
+import 'package:water_supply/widgets/custom_button2.dart';
 import 'package:water_supply/widgets/custom_text_form_field.dart';
 import 'package:http/http.dart' as http;
 import '../../core/utils/color_constant.dart';
@@ -7,7 +7,8 @@ import '../../core/utils/image_constant.dart';
 import '../../core/utils/size_utils.dart';
 import '../../routes/app_routes.dart';
 import '../../theme/app_style.dart';
-import '../../widgets/custom_image_view.dart';
+import '../../widget/custom_image_view.dart';
+
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);

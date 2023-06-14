@@ -3,7 +3,8 @@ import 'package:flutter/material.dart';
 import '../core/utils/color_constant.dart';
 import '../core/utils/image_constant.dart';
 import '../core/utils/size_utils.dart';
-import '../widgets/custom_image_view.dart';
+import 'custom_image_view.dart';
+
 
 
 class CustomBottomBar extends StatefulWidget {
