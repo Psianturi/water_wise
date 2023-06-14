@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:water_supply/widgets/custom_button.dart';
+import 'package:water_supply/widgets/custom_button2.dart';
 import 'package:mysql1/mysql1.dart';
 import '../../core/utils/color_constant.dart';
 import '../../core/utils/image_constant.dart';
@@ -7,7 +7,8 @@ import '../../core/utils/size_utils.dart';
 import '../../routes/app_routes.dart';
 import '../../theme/app_decoration.dart';
 import '../../theme/app_style.dart';
-import '../../widgets/custom_image_view.dart';
+import '../../widget/custom_image_view.dart';
+
 
 class IntroScreen extends StatelessWidget {
   @override

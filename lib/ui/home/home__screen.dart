@@ -99,8 +99,13 @@ class _HomeScreenState extends State<HomeScreen> {
                         ])),
                 actions: [
                   AppbarCircleimage(
-                      imagePath: "$profile_photo",
-                      margin: getMargin(left: 30, top: 3, right: 30, bottom: 3))
+                      // imagePath: "$profile_photo",
+                      imagePath: "assets/images/img_girl.png",
+                      margin: getMargin(left: 30, top: 3, right: 30, bottom: 3),
+                      onTap: () {
+                        Navigator.pushNamed(context, AppRoutes.profileScreen);
+                      }
+                  )
                 ]),
             body: Container(
                 width: double.maxFinite,

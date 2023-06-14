@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../widgets/custom_image_view.dart';
+import '../widget/custom_image_view.dart';
+
 
 
 // ignore: must_be_immutable

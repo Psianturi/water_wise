@@ -95,61 +95,79 @@ class _ProfileScreenState extends State<ProfileScreen> {
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              CustomTextFormField(
-                focusNode: FocusNode(),
-                autofocus: true,
-                controller: dateController,
-                hintText: "Update Account",
+              //Button
+              CustomButton(
+                height: 40 ,
+                width: 250,
+                // width: getHorizontalSize(
+                //   95,
+                // ),
+                text: "Update Account",
+                onTap: () {
+                  navigatorKey.currentState!.push(
+                    MaterialPageRoute(
+                      builder: (context) => HomeScreen(),
+                    ),
+                  );
+                },
                 margin: getMargin(
-                  right: 20,
+                  left: 10,
                 ),
-                variant: TextFormFieldVariant.OutlineBlack9003f,
-                shape: TextFormFieldShape.RoundedBorder12,
-                padding: TextFormFieldPadding.PaddingAll16,
-                fontStyle: TextFormFieldFontStyle.PoppinsSemiBold12,
               ),
-              CustomTextFormField(
-                focusNode: FocusNode(),
-                autofocus: true,
-                controller: paymentmethodsController,
-                hintText: "Payment Methods",
+
+              CustomButton(
+                height: 40 ,
+                width: 250,
+                // width: getHorizontalSize(
+                //   95,
+                // ),
+                text: "Payment Methods",
+                onTap: () {
+                  navigatorKey.currentState!.push(
+                    MaterialPageRoute(
+                      builder: (context) => HomeScreen(),
+                    ),
+                  );
+                },
                 margin: getMargin(
-                  top: 23,
-                  right: 20,
+                  left: 10,
                 ),
-                variant: TextFormFieldVariant.OutlineBlack9003f,
-                shape: TextFormFieldShape.RoundedBorder12,
-                padding: TextFormFieldPadding.PaddingAll16,
-                fontStyle: TextFormFieldFontStyle.PoppinsSemiBold12,
               ),
-              CustomTextFormField(
-                focusNode: FocusNode(),
-                autofocus: true,
-                controller: vouchersController,
-                hintText: "Vouchers",
+              CustomButton(
+                height: 40 ,
+                width: 250,
+                // width: getHorizontalSize(
+                //   95,
+                // ),
+                text: "Vouchers",
+                onTap: () {
+                  navigatorKey.currentState!.push(
+                    MaterialPageRoute(
+                      builder: (context) => HomeScreen(),
+                    ),
+                  );
+                },
                 margin: getMargin(
-                  top: 23,
-                  right: 20,
+                  left: 10,
                 ),
-                variant: TextFormFieldVariant.OutlineBlack9003f,
-                shape: TextFormFieldShape.RoundedBorder12,
-                padding: TextFormFieldPadding.PaddingAll16,
-                fontStyle: TextFormFieldFontStyle.PoppinsSemiBold12,
               ),
-              CustomTextFormField(
-                focusNode: FocusNode(),
-                autofocus: true,
-                controller: contactusController,
-                hintText: "Contact Us",
+              CustomButton(
+                height: 40 ,
+                width: 250,
+                // width: getHorizontalSize(
+                //   95,
+                // ),
+                text: "Contact Us",
+                onTap: () {
+                  navigatorKey.currentState!.push(
+                    MaterialPageRoute(
+                      builder: (context) => HomeScreen(),
+                    ),
+                  );
+                },
                 margin: getMargin(
-                  top: 23,
-                  right: 20,
+                  left: 10,
                 ),
-                variant: TextFormFieldVariant.OutlineBlack9003f,
-                shape: TextFormFieldShape.RoundedBorder12,
-                padding: TextFormFieldPadding.PaddingAll16,
-                fontStyle: TextFormFieldFontStyle.PoppinsSemiBold12,
-                textInputAction: TextInputAction.done,
               ),
               CustomButton(
                 height: getVerticalSize(
@@ -161,7 +179,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 text: "Logout",
                 margin: getMargin(
                   left: 122,
-                  top: 39,
+                  top: 45,
                   bottom: 5,
                 ),
                 variant: ButtonVariant.OutlineBluegray700,

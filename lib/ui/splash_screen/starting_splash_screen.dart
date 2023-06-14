@@ -6,7 +6,8 @@ import 'package:water_supply/ui/intro_screen/intro_screen.dart';
 import '../../core/utils/color_constant.dart';
 import '../../core/utils/image_constant.dart';
 import '../../core/utils/size_utils.dart';
-import '../../widgets/custom_image_view.dart';
+import '../../widget/custom_image_view.dart';
+
 
 class SplashScreenPage extends StatefulWidget {
   const SplashScreenPage({ Key? key }) : super(key: key);
