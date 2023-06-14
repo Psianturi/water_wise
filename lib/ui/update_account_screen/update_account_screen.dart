@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import '../../core/app_export.dart';
 import '../../widget/custom_button.dart';
 import '../../widget/custom_text_form_field.dart';
-
-
 
 class UpdateAccountScreen extends StatefulWidget {
   const UpdateAccountScreen({Key? key}) : super(key: key);
@@ -14,6 +13,8 @@ class UpdateAccountScreen extends StatefulWidget {
 // ignore_for_file: must_be_immutable
 class _UpdateAccountScreenState extends State<UpdateAccountScreen> {
   TextEditingController firstnameController = TextEditingController();
+  TextEditingController lastnameController = TextEditingController();
+
 
   TextEditingController emailController = TextEditingController();
 
@@ -27,29 +28,65 @@ class _UpdateAccountScreenState extends State<UpdateAccountScreen> {
         child: Scaffold(
             backgroundColor: ColorConstant.whiteA700,
             resizeToAvoidBottomInset: false,
+            appBar:
+            AppBar(
+              backgroundColor: Color(0xFFFFFFFF),
+              leading: IconButton(
+                icon: SvgPicture.asset(
+                  'assets/images/img_arrowleft_indigo_800.svg',
+                  color: Color(0xFF4A6964),
+                ),
+                onPressed: () {
+                  // Implement your desired functionality for the back button
+                },
+              ),
+              title: Text(
+                'Update Account',
+                style: TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.w600,
+                  fontFamily: 'Poppins',
+                  color: Color(0xFF404040),
+                ),
+              ),
+              actions: [
+              ],
+            ),
             body: Form(
                 key: _formKey,
                 child: Container(
                     width: double.maxFinite,
                     padding:
-                    getPadding(left: 30, top: 32, right: 30, bottom: 32),
+                    getPadding(left: 30, right: 30, bottom: 32),
                     child: Column(
+                        mainAxisSize: MainAxisSize.min, // Set the mainAxisSize to min
                         crossAxisAlignment: CrossAxisAlignment.start,
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
-                          CustomButton(
-                              width: getHorizontalSize(202),
-                              text: "    Update Account",
-                              shape: ButtonShape.Square,
-                              fontStyle: ButtonFontStyle.PoppinsSemiBold18,
-                              prefixWidget: Container(
-                                  margin: getMargin(right: 30),
-                                  child: CustomImageView(
-                                      svgPath:"assets/images/img_arrowleft_indigo_800.svg"
-                                  )),
-                              onTap: () {
-                                onTapUpdateaccount(context);
-                              }),
+                          // AppBar(
+                          //   backgroundColor: Color(0xFFFFFFFF),
+                          //   leading: IconButton(
+                          //     icon: SvgPicture.asset(
+                          //       'assets/images/img_arrowleft_indigo_800.svg',
+                          //       color: Color(0xFF4A6964),
+                          //     ),
+                          //     onPressed: () {
+                          //       // Implement your desired functionality for the back button
+                          //     },
+                          //   ),
+                          //   title: Text(
+                          //     'Update Account',
+                          //     style: TextStyle(
+                          //       fontSize: 18,
+                          //       fontWeight: FontWeight.w600,
+                          //         fontFamily: 'Poppins',
+                          //       color: Color(0xFF404040),
+                          //     ),
+                          //   ),
+                          //   actions: [
+                          //   ],
+                          // ),
+
                           Padding(
                               padding: getPadding(top: 76),
                               child: Row(
@@ -72,28 +109,16 @@ class _UpdateAccountScreenState extends State<UpdateAccountScreen> {
                                               focusNode: FocusNode(),
                                               autofocus: true,
                                               controller: firstnameController,
-                                              hintText: "First name",
+                                              hintText: "First name ",
+                                              margin: getMargin(top: 4)),
+                                          CustomTextFormField(
+                                              width: getHorizontalSize(150),
+                                              autofocus: true,
+                                              controller: lastnameController,
+                                              hintText: "Last name",
                                               margin: getMargin(top: 4))
                                         ]),
-                                    Container(
-                                        width: getHorizontalSize(150),
-                                        margin: getMargin(top: 22),
-                                        padding: getPadding(
-                                            left: 16,
-                                            top: 10,
-                                            right: 16,
-                                            bottom: 10),
-                                        decoration: AppDecoration
-                                            .txtOutlineGray300
-                                            .copyWith(
-                                            borderRadius: BorderRadiusStyle
-                                                .txtRoundedBorder8),
-                                        child: Text("Last name",
-                                            overflow: TextOverflow.ellipsis,
-                                            textAlign: TextAlign.left,
-                                            style:
-                                            AppStyle.txtPoppinsRegular12))
-                                  ])),
+                                    ])),
                           Padding(
                               padding: getPadding(top: 19),
                               child: Column(
@@ -111,7 +136,7 @@ class _UpdateAccountScreenState extends State<UpdateAccountScreen> {
                                         hintText: "Enter your email",
                                         margin: getMargin(top: 4),
                                         textInputType:
-                                        TextInputType.emailAddress)
+                                        TextInputType.emailAddress),
                                   ])),
                           Padding(
                               padding: getPadding(top: 19),

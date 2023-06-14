@@ -8,7 +8,8 @@ import '../../app_bar/appbar_title.dart';
 import '../../app_bar/custom_app_bar.dart';
 import '../../widget/custom_bottom_bar.dart';
 import '../../widget/custom_button.dart';
-import '../../widget/custom_text_form_field.dart';
+// import '../../widget/custom_text_form_field.dart';
+import '../update_account_screen/update_account_screen.dart';
 
 class ProfileScreen extends StatefulWidget {
   const ProfileScreen({Key? key}) : super(key: key);
@@ -97,8 +98,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
             children: [
               //Button
               CustomButton(
-                height: 40 ,
-                width: 250,
+                height: 50 ,
+                width: 300,
                 // width: getHorizontalSize(
                 //   95,
                 // ),
@@ -106,18 +107,19 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 onTap: () {
                   navigatorKey.currentState!.push(
                     MaterialPageRoute(
-                      builder: (context) => HomeScreen(),
+                      builder: (context) => UpdateAccountScreen(),
                     ),
                   );
                 },
                 margin: getMargin(
-                  left: 10,
+                  left: 25,
+                  bottom: 10
                 ),
               ),
 
               CustomButton(
-                height: 40 ,
-                width: 250,
+                height: 50 ,
+                width: 300,
                 // width: getHorizontalSize(
                 //   95,
                 // ),
@@ -130,15 +132,13 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   );
                 },
                 margin: getMargin(
-                  left: 10,
+                  left: 25,
+                    bottom: 10
                 ),
               ),
               CustomButton(
-                height: 40 ,
-                width: 250,
-                // width: getHorizontalSize(
-                //   95,
-                // ),
+                height: 50 ,
+                width: 300,
                 text: "Vouchers",
                 onTap: () {
                   navigatorKey.currentState!.push(
@@ -148,12 +148,13 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   );
                 },
                 margin: getMargin(
-                  left: 10,
+                  left: 25,
+                    bottom: 10
                 ),
               ),
               CustomButton(
-                height: 40 ,
-                width: 250,
+                height: 50 ,
+                width: 300,
                 // width: getHorizontalSize(
                 //   95,
                 // ),
@@ -166,7 +167,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   );
                 },
                 margin: getMargin(
-                  left: 10,
+                  left: 25,
+                    bottom: 10
                 ),
               ),
               CustomButton(
@@ -204,7 +206,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
       case BottomBarEnum.Home1:
         return AppRoutes.homeScreen;
       case BottomBarEnum.History1:
-        return "/";
+        return AppRoutes.billingScreen;
       case BottomBarEnum.Notification1:
         return "/";
       case BottomBarEnum.Profile1:
@@ -217,7 +219,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
   ///Handling page based on route
   Widget getCurrentPage(String currentRoute) {
     switch (currentRoute) {
-      case AppRoutes.homeScreen:
+      case AppRoutes.profileScreen:
       default:
         return DefaultWidget();
     }
