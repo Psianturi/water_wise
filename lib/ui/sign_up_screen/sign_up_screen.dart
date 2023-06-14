@@ -7,8 +7,8 @@ import '../../routes/app_routes.dart';
 import 'package:http/http.dart' as http;
 import '../../theme/app_decoration.dart';
 import '../../theme/app_style.dart';
-import '../../widgets/custom_button.dart';
-import '../../widgets/custom_image_view.dart';
+import '../../widgets/custom_button2.dart';
+import '../../widget/custom_image_view.dart';
 import '../../widgets/custom_text_form_field.dart';
 
 // ignore_for_file: must_be_immutable
