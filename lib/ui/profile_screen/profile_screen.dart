@@ -190,7 +190,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
       case BottomBarEnum.Notification1:
         return "/";
       case BottomBarEnum.Profile1:
-        return "/";
+        return AppRoutes.profileScreen;
       default:
         return "/";
     }

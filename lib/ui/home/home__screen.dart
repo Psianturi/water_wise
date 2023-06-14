@@ -4,6 +4,7 @@ import 'package:http/http.dart' as http;
 import 'package:http_parser/http_parser.dart';
 import '../../app_bar/appbar_circleimage.dart';
 import '../../app_bar/appbar_subtitle.dart';
+import '../../widget/custom_bottom_bar.dart';
 import '../../app_bar/appbar_title.dart';
 import '../../app_bar/custom_app_bar.dart';
 import '../../core/utils/color_constant.dart';
@@ -76,6 +77,8 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   TextEditingController dateController = TextEditingController();
+  GlobalKey<NavigatorState> navigatorKey = GlobalKey();
+
 
   @override
   Widget build(BuildContext context) {
@@ -392,12 +395,45 @@ class _HomeScreenState extends State<HomeScreen> {
                                                           itemBuilder:
                                                               (context, index) {
                                                             return HomeItemWidget();
-                                                          }))
-                                                ])))
-                                  ])))
-                    ])))
+                                                          })),
+                                                ]))),
+                                  ]))),
+                    ])),
+            bottomNavigationBar: CustomBottomBar(
+            onChanged: (BottomBarEnum type) {
+    Navigator.pushNamed(
+    navigatorKey.currentContext!, getCurrentRoute(type));
+    },
+    ),
+
+    ),
     );
   }
+  ///Handling route based on bottom click actions
+  String getCurrentRoute(BottomBarEnum type) {
+    switch (type) {
+      case BottomBarEnum.Home1:
+        return AppRoutes.homeScreen;
+      case BottomBarEnum.History1:
+        return AppRoutes.profileScreen;
+      case BottomBarEnum.Notification1:
+        return "/";
+      case BottomBarEnum.Profile1:
+        return AppRoutes.profileScreen;
+      default:
+        return "/";
+    }
+  }
+
+  ///Handling page based on route
+  Widget getCurrentPage(String currentRoute) {
+    switch (currentRoute) {
+      case AppRoutes.homeScreen:
+      default:
+        return DefaultWidget();
+    }
+  }
+
 
   onTapWater(BuildContext context) {
     Navigator.pushNamed(context, AppRoutes.estimateScreen);

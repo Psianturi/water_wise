@@ -32,7 +32,7 @@ class _CustomBottomBarState extends State<CustomBottomBar> {
       type: BottomBarEnum.Notification1,
     ),
     BottomMenuModel(
-      icon: ImageConstant.imgProfile1,
+      icon: "assets/images/img_profile1.svg",
       type: BottomBarEnum.Profile1,
     )
   ];
@@ -119,7 +119,7 @@ class DefaultWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.white,
+      color: Color(0xFF4A6964),
       padding: EdgeInsets.all(10),
       child: Center(
         child: Column(
