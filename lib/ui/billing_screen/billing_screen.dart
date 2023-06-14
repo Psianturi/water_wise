@@ -55,7 +55,7 @@ class _BillingScreenState extends State<BillingScreen> {
                                   .copyWith(
                                   letterSpacing: getHorizontalSize(1.0)))),
                       Padding(
-                          padding: getPadding(left: 165w, top: 4),
+                          padding: getPadding(left: 165, top: 4),
                           child: Text("200",
                               overflow: TextOverflow.ellipsis,
                               textAlign: TextAlign.left,

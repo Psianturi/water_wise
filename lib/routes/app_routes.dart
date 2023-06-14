@@ -4,6 +4,7 @@ import '../ui/app_navigation_screen/app_navigation_screen.dart';
 import '../ui/home/home__screen.dart';
 import '../ui/intro_screen/intro_screen.dart';
 import '../ui/login_screen/login_screen.dart';
+import '../ui/notification_screen/notification_screen.dart';
 import '../ui/sign_up_screen/sign_up_screen.dart';
 import '../ui/splash_screen/starting_splash_screen.dart';
 import '../ui/profile_screen/profile_screen.dart';
@@ -29,7 +30,7 @@ class AppRoutes {
   static const String updateAccountScreen = '/update_account_screen';
   static const String billingScreen = '/billing_screen';
   static const String viewBillScreen = '/view_bill_screen';
-
+  static const String notificationScreen = '/notification_screen';
 
 
 
@@ -43,7 +44,9 @@ class AppRoutes {
     profileScreen: (context) => ProfileScreen(),
     updateAccountScreen: (context) => UpdateAccountScreen(),
     billingScreen: (context) => BillingScreen(),
-    viewBillScreen: (context) => ViewBillScreen()
+    viewBillScreen: (context) => ViewBillScreen(),
+    notificationScreen: (context) => NotificationScreen(),
+
 
 
 

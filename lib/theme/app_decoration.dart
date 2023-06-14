@@ -101,6 +101,25 @@ class AppDecoration {
     ),
   );
 
+  static BoxDecoration get outlineBlack90019 => BoxDecoration(
+    color: ColorConstant.whiteA700,
+    boxShadow: [
+      BoxShadow(
+        color: ColorConstant.black90019,
+        spreadRadius: getHorizontalSize(
+          2,
+        ),
+        blurRadius: getHorizontalSize(
+          2,
+        ),
+        offset: Offset(
+          0,
+          2,
+        ),
+      ),
+    ],
+  );
+
 }
 
 class BorderRadiusStyle {
@@ -147,30 +166,6 @@ class BorderRadiusStyle {
       ),
     ),
   );
-
-  static BoxDecoration get outlineBlack90019 => BoxDecoration(
-    color: ColorConstant.whiteA700,
-    boxShadow: [
-      BoxShadow(
-        color: ColorConstant.black90019,
-        spreadRadius: getHorizontalSize(
-          2,
-        ),
-        blurRadius: getHorizontalSize(
-          2,
-        ),
-        offset: Offset(
-          0,
-          2,
-        ),
-      ),
-    ],
-  );
-  static BoxDecoration get green => BoxDecoration(
-    color: ColorConstant.blueGray700,
-  );
-
-
 
 }
 
