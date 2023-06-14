@@ -164,16 +164,16 @@ class _ViewBillScreenState extends State <ViewBillScreen> {
                               mainAxisSize: MainAxisSize.min,
                               mainAxisAlignment: MainAxisAlignment.start,
                               children: [
-                                CustomTextFormField(
-                                    focusNode: FocusNode(),
-                                    autofocus: true,
-                                    controller: groupfortytwoController,
-                                    hintText: "Kitchen",
-                                    variant: TextFormFieldVariant
-                                        .UnderLineBluegray40001,
-                                    fontStyle: TextFormFieldFontStyle
-                                        .PoppinsRegular12Gray800,
-                                    textInputAction: TextInputAction.done),
+                                Container(
+                                    width: getHorizontalSize(66),
+                                    child: Text("Kitchen",
+                                        maxLines: null,
+                                        textAlign: TextAlign.left,
+                                        style: AppStyle
+                                            .txtPoppinsRegular12Gray800
+                                            .copyWith(
+                                            letterSpacing:
+                                            getHorizontalSize(1.0)))),
                                 Padding(
                                     padding: getPadding(top: 10),
                                     child: Row(

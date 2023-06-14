@@ -55,8 +55,8 @@ class _BillingScreenState extends State<BillingScreen> {
                                   .copyWith(
                                   letterSpacing: getHorizontalSize(1.0)))),
                       Padding(
-                          padding: getPadding(left: 141, top: 4),
-                          child: Text("200",
+                          padding: getPadding(left: 150, top: 4),
+                          child: Text("200 SGD",
                               overflow: TextOverflow.ellipsis,
                               textAlign: TextAlign.left,
                               style: AppStyle.txtPoppinsSemiBold30Gray800
@@ -105,20 +105,16 @@ class _BillingScreenState extends State<BillingScreen> {
                                                     mainAxisAlignment:
                                                     MainAxisAlignment.start,
                                                     children: [
-                                                      CustomTextFormField(
-                                                          focusNode:
-                                                          FocusNode(),
-                                                          autofocus: true,
-                                                          controller:
-                                                          groupthirtyseveController,
-                                                          hintText:
-                                                          "This Month",
-                                                          variant:
-                                                          TextFormFieldVariant
-                                                              .UnderLineGray300,
-                                                          fontStyle:
-                                                          TextFormFieldFontStyle
-                                                              .PoppinsRegular12Gray800),
+                                                      Text(
+                                                          "June",
+                                                          overflow: TextOverflow
+                                                              .ellipsis,
+                                                          textAlign: TextAlign
+                                                              .left,
+                                                          style: AppStyle
+                                                              .txtPoppinsRegular12Gray800
+                                                              .copyWith(letterSpacing: getHorizontalSize(1.0))),
+
                                                       Padding(
                                                           padding: getPadding(
                                                               top: 10),
@@ -149,7 +145,7 @@ class _BillingScreenState extends State<BillingScreen> {
                                                                               top:
                                                                               4),
                                                                           child: Text(
-                                                                              "Due Date",
+                                                                              "10/07/2023",
                                                                               overflow: TextOverflow.ellipsis,
                                                                               textAlign: TextAlign.left,
                                                                               style: AppStyle.txtPoppinsRegular12RedA400.copyWith(letterSpacing: getHorizontalSize(1.0))))
@@ -193,22 +189,16 @@ class _BillingScreenState extends State<BillingScreen> {
                                                     mainAxisAlignment:
                                                     MainAxisAlignment.start,
                                                     children: [
-                                                      CustomTextFormField(
-                                                          focusNode:
-                                                          FocusNode(),
-                                                          autofocus: true,
-                                                          controller:
-                                                          groupthirtynineController,
-                                                          hintText: "May",
-                                                          variant:
-                                                          TextFormFieldVariant
-                                                              .UnderLineGray300,
-                                                          fontStyle:
-                                                          TextFormFieldFontStyle
-                                                              .PoppinsRegular12Gray800,
-                                                          textInputAction:
-                                                          TextInputAction
-                                                              .done),
+                                                      Text(
+                                                          "May",
+                                                          overflow: TextOverflow
+                                                              .ellipsis,
+                                                          textAlign: TextAlign
+                                                              .left,
+                                                          style: AppStyle
+                                                              .txtPoppinsRegular12Gray800
+                                                              .copyWith(letterSpacing: getHorizontalSize(1.0))),
+
                                                       Padding(
                                                           padding: getPadding(
                                                               top: 11),
@@ -250,7 +240,7 @@ class _BillingScreenState extends State<BillingScreen> {
                                                                         bottom:
                                                                         10),
                                                                     child: Text(
-                                                                        "250",
+                                                                        "250 SGD",
                                                                         overflow:
                                                                         TextOverflow
                                                                             .ellipsis,
@@ -277,11 +267,11 @@ class _BillingScreenState extends State<BillingScreen> {
       case BottomBarEnum.Home1:
         return AppRoutes.homeScreen;
       case BottomBarEnum.History1:
-        return "/";
+        return AppRoutes.billingScreen;
       case BottomBarEnum.Notification1:
         return "/";
       case BottomBarEnum.Profile1:
-        return "/";
+        return AppRoutes.profileScreen;
       default:
         return "/";
     }
