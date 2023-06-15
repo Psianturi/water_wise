@@ -20,7 +20,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
   void loginUser(String email, String password) async {
 
-    var url = 'http://192.168.1.16/water_wise/login_config.php';
+    var url = 'http://192.168.1.16/api/login';
     var response = await http.post( Uri.parse(url) ,
         body: {
           'email': email,
@@ -30,6 +30,7 @@ class _LoginScreenState extends State<LoginScreen> {
     if (response.statusCode == 200) {
       print('success');
       Navigator.pushNamed(context, AppRoutes.homeScreen);
+      Navigator.pushNamed(context, AppRoutes.bottomBarMenu);
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
           content: Text('Login Successful'),

@@ -112,8 +112,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   );
                 },
                 margin: getMargin(
-                  left: 25,
-                  bottom: 10
+                    left: 25,
+                    bottom: 10
                 ),
               ),
 
@@ -132,7 +132,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   );
                 },
                 margin: getMargin(
-                  left: 25,
+                    left: 25,
                     bottom: 10
                 ),
               ),
@@ -148,7 +148,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   );
                 },
                 margin: getMargin(
-                  left: 25,
+                    left: 25,
                     bottom: 10
                 ),
               ),
@@ -167,7 +167,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   );
                 },
                 margin: getMargin(
-                  left: 25,
+                    left: 25,
                     bottom: 10
                 ),
               ),
@@ -190,38 +190,38 @@ class _ProfileScreenState extends State<ProfileScreen> {
             ],
           ),
         ),
-        bottomNavigationBar: CustomBottomBar(
-          onChanged: (BottomBarEnum type) {
-            Navigator.pushNamed(
-                navigatorKey.currentContext!, getCurrentRoute(type));
-          },
-        ),
+        // bottomNavigationBar: CustomBottomBar(
+        //   onChanged: (BottomBarEnum type) {
+        //     Navigator.pushNamed(
+        //         navigatorKey.currentContext!, getCurrentRoute(type));
+        //   },
+        // ),
       ),
     );
   }
 
-  ///Handling route based on bottom click actions
-  String getCurrentRoute(BottomBarEnum type) {
-    switch (type) {
-      case BottomBarEnum.Home1:
-        return AppRoutes.homeScreen;
-      case BottomBarEnum.History1:
-        return AppRoutes.billingScreen;
-      case BottomBarEnum.Notification1:
-        return "/";
-      case BottomBarEnum.Profile1:
-        return AppRoutes.profileScreen;
-      default:
-        return "/";
-    }
-  }
+///Handling route based on bottom click actions
+// String getCurrentRoute(BottomBarEnum type) {
+//   switch (type) {
+//     case BottomBarEnum.Home1:
+//       return AppRoutes.homeScreen;
+//     case BottomBarEnum.History1:
+//       return AppRoutes.billingScreen;
+//     case BottomBarEnum.Notification1:
+//       return "/";
+//     case BottomBarEnum.Profile1:
+//       return AppRoutes.profileScreen;
+//     default:
+//       return "/";
+//   }
+// }
 
-  ///Handling page based on route
-  Widget getCurrentPage(String currentRoute) {
-    switch (currentRoute) {
-      case AppRoutes.profileScreen:
-      default:
-        return DefaultWidget();
-    }
-  }
+///Handling page based on route
+// Widget getCurrentPage(String currentRoute) {
+//   switch (currentRoute) {
+//     case AppRoutes.profileScreen:
+//     default:
+//       return DefaultWidget();
+//   }
+// }
 }

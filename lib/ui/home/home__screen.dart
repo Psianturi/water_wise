@@ -119,204 +119,102 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Placeholder(
-        child: Scaffold(
-            backgroundColor: ColorConstant.whiteA700,
-            resizeToAvoidBottomInset: false,
-            appBar: CustomAppBar(
-                height: getVerticalSize(83),
-                title: Padding(
-                    padding: getPadding(left: 30),
-                    child: Column(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: [
-                    AppbarTitle(
-                    text: 'Hi, $profileName',
-                ),
-                          AppbarSubtitle(
-                              text: "Welcome!", margin: getMargin(right: 34))
-                        ])),
-                actions: [
-                  AppbarCircleimage(
-                      // imagePath: "$profile_photo",
-                      imagePath: "assets/images/img_girl.png",
-                      margin: getMargin(left: 30, top: 3, right: 30, bottom: 3),
-                      onTap: () {
-                        Navigator.pushNamed(context, AppRoutes.profileScreen);
-                      }
-                  )
-                ]),
-            body: Container(
-                width: double.maxFinite,
+    return SafeArea(
+      child: Scaffold(
+        backgroundColor: ColorConstant.whiteA700,
+        resizeToAvoidBottomInset: false,
+        appBar: CustomAppBar(
+            height: getVerticalSize(83),
+            title: Padding(
+                padding: getPadding(left: 30),
                 child: Column(
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
-                      Container(
-                          margin: getMargin(left: 30, top: 27, right: 30),
-                          padding: getPadding(
-                              left: 119, top: 28, right: 119, bottom: 28),
-                          decoration: AppDecoration.green.copyWith(
-                              borderRadius: BorderRadiusStyle.roundedBorder12),
-                          child: Column(
-                              mainAxisSize: MainAxisSize.min,
-                              mainAxisAlignment: MainAxisAlignment.start,
-                              children: [
-                                Text("Balance",
+                      AppbarTitle(
+                        text: 'Hi, $profileName',
+                      ),
+                      AppbarSubtitle(
+                          text: "Welcome!", margin: getMargin(right: 34))
+                    ])),
+            actions: [
+              AppbarCircleimage(
+                // imagePath: "$profile_photo",
+                  imagePath: "assets/images/img_girl.png",
+                  margin: getMargin(left: 30, top: 3, right: 30, bottom: 3),
+                  onTap: () {
+                    Navigator.pushNamed(context, AppRoutes.profileScreen);
+                  }
+              )
+            ]),
+        body: Container(
+            width: double.maxFinite,
+            child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  Container(
+                      margin: getMargin(left: 30, top: 22, right: 30),
+                      padding: getPadding(
+                          left: 119, top: 25, right: 119, bottom: 25),
+                      decoration: AppDecoration.green.copyWith(
+                          borderRadius: BorderRadiusStyle.roundedBorder12),
+                      child: Column(
+                          mainAxisSize: MainAxisSize.min,
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            Text("Balance",
+                                overflow: TextOverflow.ellipsis,
+                                textAlign: TextAlign.left,
+                                style: AppStyle.txtPoppinsRegular14
+                                    .copyWith(
+                                    letterSpacing:
+                                    getHorizontalSize(1.0))),
+                            Padding(
+                                padding: getPadding(top: 4),
+                                child: Text("200",
                                     overflow: TextOverflow.ellipsis,
                                     textAlign: TextAlign.left,
-                                    style: AppStyle.txtPoppinsRegular14
+                                    style: AppStyle.txtPoppinsSemiBold30
                                         .copyWith(
                                         letterSpacing:
-                                        getHorizontalSize(1.0))),
-                                Padding(
-                                    padding: getPadding(top: 4),
-                                    child: Text("200",
-                                        overflow: TextOverflow.ellipsis,
-                                        textAlign: TextAlign.left,
-                                        style: AppStyle.txtPoppinsSemiBold30
-                                            .copyWith(
-                                            letterSpacing:
-                                            getHorizontalSize(0.3)))),
-                                CustomIconButton(
-                                    height: 45,
-                                    width: 45,
-                                    margin: getMargin(top: 30),
-                                    variant: IconButtonVariant.White,
-                                    child: CustomImageView(
-                                        svgPath: ImageConstant.imgBag)),
-                                Padding(
-                                    padding: getPadding(top: 13),
-                                    child: Text("Top Up",
-                                        overflow: TextOverflow.ellipsis,
-                                        textAlign: TextAlign.left,
-                                        style: AppStyle
-                                            .txtPoppinsRegular12WhiteA700
-                                            .copyWith(
-                                            letterSpacing:
-                                            getHorizontalSize(0.12))))
-                              ])),
-                      Align(
-                          alignment: Alignment.centerLeft,
-                          child: Padding(
-                              padding: getPadding(left: 30, top: 21),
-                              child: Text("Pay Bill",
-                                  overflow: TextOverflow.ellipsis,
-                                  textAlign: TextAlign.left,
-                                  style: AppStyle.txtPoppinsSemiBold18.copyWith(
-                                      letterSpacing: getHorizontalSize(1.0))))),
-                      Padding(
-                          padding: getPadding(left: 30, top: 10, right: 30),
-                          child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                GestureDetector(
-                                    onTap: () {
-                                      onTapWater(context);
-                                    },
-                                    child: Padding(
-                                        padding: getPadding(bottom: 1),
-                                        child: Column(
-                                            mainAxisAlignment:
-                                            MainAxisAlignment.start,
-                                            children: [
-                                              CustomIconButton(
-                                                  height: 45,
-                                                  width: 45,
-                                                  child: CustomImageView(
-                                                      svgPath: ImageConstant
-                                                          .imgAir1)),
-                                              Padding(
-                                                  padding: getPadding(top: 11),
-                                                  child: Text("Estimate",
-                                                      overflow:
-                                                      TextOverflow.ellipsis,
-                                                      textAlign: TextAlign.left,
-                                                      style: AppStyle
-                                                          .txtPoppinsRegular12Gray800
-                                                          .copyWith(
-                                                          letterSpacing:
-                                                          getHorizontalSize(
-                                                              0.6))))
-                                            ]))),
-                                Column(
-                                    mainAxisAlignment: MainAxisAlignment.start,
-                                    children: [
-                                      Container(
-                                          margin:
-                                          getMargin(left: 18, right: 18),
-                                          padding: getPadding(
-                                              left: 13,
-                                              top: 11,
-                                              right: 13,
-                                              bottom: 11),
-                                          decoration: AppDecoration
-                                              .fillBluegray40001
-                                              .copyWith(
-                                              borderRadius:
-                                              BorderRadiusStyle
-                                                  .roundedBorder12),
-                                          child: Column(
-                                              mainAxisSize: MainAxisSize.min,
-                                              crossAxisAlignment:
-                                              CrossAxisAlignment.start,
-                                              mainAxisAlignment:
-                                              MainAxisAlignment.start,
-                                              children: [
-                                                Card(
-                                                    clipBehavior:
-                                                    Clip.antiAlias,
-                                                    elevation: 0,
-                                                    margin: EdgeInsets.all(0),
-                                                    color:
-                                                    ColorConstant.indigo800,
-                                                    shape: RoundedRectangleBorder(
-                                                        borderRadius:
-                                                        BorderRadiusStyle
-                                                            .roundedBorder5),
-                                                    child: Container(
-                                                        height:
-                                                        getVerticalSize(23),
-                                                        width:
-                                                        getHorizontalSize(
-                                                            18),
-                                                        decoration: AppDecoration
-                                                            .fillIndigo800
-                                                            .copyWith(
-                                                            borderRadius:
-                                                            BorderRadiusStyle
-                                                                .roundedBorder5),
-                                                        child: Stack(children: [
-                                                          CustomImageView(
-                                                              svgPath:
-                                                              ImageConstant
-                                                                  .imgMobile,
-                                                              height:
-                                                              getVerticalSize(
-                                                                  23),
-                                                              width:
-                                                              getHorizontalSize(
-                                                                  18),
-                                                              alignment:
-                                                              Alignment
-                                                                  .center)
-                                                        ])))
-                                              ])),
-                                      Padding(
-                                          padding: getPadding(top: 13),
-                                          child: Text("Marketplace",
-                                              overflow: TextOverflow.ellipsis,
-                                              textAlign: TextAlign.left,
-                                              style: AppStyle
-                                                  .txtPoppinsRegular12Gray800
-                                                  .copyWith(
-                                                  letterSpacing:
-                                                  getHorizontalSize(
-                                                      0.6))))
-                                    ]),
-                                GestureDetector(
-                                    onTap: () {
-                                      onTapInvest(context);
-                                    },
+                                        getHorizontalSize(0.3)))),
+                            CustomIconButton(
+                                height: 45,
+                                width: 45,
+                                margin: getMargin(top: 30),
+                                variant: IconButtonVariant.White,
+                                child: CustomImageView(
+                                    svgPath: ImageConstant.imgBag)),
+                            Padding(
+                                padding: getPadding(top: 13),
+                                child: Text("Top Up",
+                                    overflow: TextOverflow.ellipsis,
+                                    textAlign: TextAlign.left,
+                                    style: AppStyle
+                                        .txtPoppinsRegular12WhiteA700
+                                        .copyWith(
+                                        letterSpacing:
+                                        getHorizontalSize(0.12))))
+                          ])),
+                  Align(
+                      alignment: Alignment.centerLeft,
+                      child: Padding(
+                          padding: getPadding(left: 30, top: 21),
+                          child: Text("Pay Bill",
+                              overflow: TextOverflow.ellipsis,
+                              textAlign: TextAlign.left,
+                              style: AppStyle.txtPoppinsSemiBold18.copyWith(
+                                  letterSpacing: getHorizontalSize(1.0))))),
+                  Padding(
+                      padding: getPadding(left: 30, top: 10, right: 30),
+                      child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            GestureDetector(
+                                onTap: () {
+                                  onTapWater(context);
+                                },
+                                child: Padding(
+                                    padding: getPadding(bottom: 1),
                                     child: Column(
                                         mainAxisAlignment:
                                         MainAxisAlignment.start,
@@ -326,10 +224,10 @@ class _HomeScreenState extends State<HomeScreen> {
                                               width: 45,
                                               child: CustomImageView(
                                                   svgPath: ImageConstant
-                                                      .imgLamp)),
+                                                      .imgAir1)),
                                           Padding(
-                                              padding: getPadding(top: 13),
-                                              child: Text("Usage",
+                                              padding: getPadding(top: 11),
+                                              child: Text("Estimate",
                                                   overflow:
                                                   TextOverflow.ellipsis,
                                                   textAlign: TextAlign.left,
@@ -339,144 +237,246 @@ class _HomeScreenState extends State<HomeScreen> {
                                                       letterSpacing:
                                                       getHorizontalSize(
                                                           0.6))))
-                                        ]))
-                              ])),
-                      Container(
-                          width: double.maxFinite,
-                          child: Container(
-                              margin: getMargin(top: 18),
-                              padding: getPadding(
-                                  left: 30, top: 14, right: 30, bottom: 14),
-                              decoration: AppDecoration.fillGray50,
-                              child: Column(
-                                  mainAxisAlignment: MainAxisAlignment.start,
-                                  children: [
-                                    Row(
-                                        mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
-                                        children: [
-                                          Text("Last Transaction",
-                                              overflow: TextOverflow.ellipsis,
+                                        ]))),
+                            Column(
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                children: [
+                                  Container(
+                                      margin:
+                                      getMargin(left: 18, right: 18),
+                                      padding: getPadding(
+                                          left: 13,
+                                          top: 11,
+                                          right: 13,
+                                          bottom: 11),
+                                      decoration: AppDecoration
+                                          .fillBluegray40001
+                                          .copyWith(
+                                          borderRadius:
+                                          BorderRadiusStyle
+                                              .roundedBorder12),
+                                      child: Column(
+                                          mainAxisSize: MainAxisSize.min,
+                                          crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                          mainAxisAlignment:
+                                          MainAxisAlignment.start,
+                                          children: [
+                                            Card(
+                                                clipBehavior:
+                                                Clip.antiAlias,
+                                                elevation: 0,
+                                                margin: EdgeInsets.all(0),
+                                                color:
+                                                ColorConstant.indigo800,
+                                                shape: RoundedRectangleBorder(
+                                                    borderRadius:
+                                                    BorderRadiusStyle
+                                                        .roundedBorder5),
+                                                child: Container(
+                                                    height:
+                                                    getVerticalSize(23),
+                                                    width:
+                                                    getHorizontalSize(
+                                                        18),
+                                                    decoration: AppDecoration
+                                                        .fillIndigo800
+                                                        .copyWith(
+                                                        borderRadius:
+                                                        BorderRadiusStyle
+                                                            .roundedBorder5),
+                                                    child: Stack(children: [
+                                                      CustomImageView(
+                                                          svgPath:
+                                                          ImageConstant
+                                                              .imgMobile,
+                                                          height:
+                                                          getVerticalSize(
+                                                              23),
+                                                          width:
+                                                          getHorizontalSize(
+                                                              18),
+                                                          alignment:
+                                                          Alignment
+                                                              .center)
+                                                    ])))
+                                          ])),
+                                  Padding(
+                                      padding: getPadding(top: 13),
+                                      child: Text("Marketplace",
+                                          overflow: TextOverflow.ellipsis,
+                                          textAlign: TextAlign.left,
+                                          style: AppStyle
+                                              .txtPoppinsRegular12Gray800
+                                              .copyWith(
+                                              letterSpacing:
+                                              getHorizontalSize(
+                                                  0.6))))
+                                ]),
+                            GestureDetector(
+                                onTap: () {
+                                  onTapInvest(context);
+                                },
+                                child: Column(
+                                    mainAxisAlignment:
+                                    MainAxisAlignment.start,
+                                    children: [
+                                      CustomIconButton(
+                                          height: 45,
+                                          width: 45,
+                                          child: CustomImageView(
+                                              svgPath: ImageConstant
+                                                  .imgLamp)),
+                                      Padding(
+                                          padding: getPadding(top: 13),
+                                          child: Text("Usage",
+                                              overflow:
+                                              TextOverflow.ellipsis,
                                               textAlign: TextAlign.left,
                                               style: AppStyle
-                                                  .txtPoppinsSemiBold18Gray800
+                                                  .txtPoppinsRegular12Gray800
                                                   .copyWith(
                                                   letterSpacing:
                                                   getHorizontalSize(
-                                                      1.0))),
-                                          GestureDetector(
-                                              onTap: () {
-                                                onTapTxtSmalllabelheavy(
-                                                    context);
-                                              },
-                                              child: Padding(
-                                                  padding: getPadding(
-                                                      top: 4, bottom: 4),
-                                                  child: Text("Details",
-                                                      overflow:
-                                                      TextOverflow.ellipsis,
-                                                      textAlign: TextAlign.left,
-                                                      style: AppStyle
-                                                          .txtPoppinsSemiBold12Bluegray700)))
-                                        ]),
-                                    Container(
-                                        width: double.maxFinite,
-                                        child: Container(
-                                            margin:
-                                            getMargin(top: 12, bottom: 15),
-                                            padding: getPadding(
-                                                left: 16,
-                                                top: 15,
-                                                right: 16,
-                                                bottom: 15),
-                                            decoration: AppDecoration.white
-                                                .copyWith(
-                                                borderRadius:
-                                                BorderRadiusStyle
-                                                    .roundedBorder12),
-                                            child: Column(
-                                                mainAxisSize: MainAxisSize.min,
-                                                mainAxisAlignment:
-                                                MainAxisAlignment.start,
-                                                children: [
-                                                  TextFormField(
-                                                    focusNode: FocusNode(),
-                                                    autofocus: true,
-                                                    controller: dateController,
-                                                    enabled: false, // Set enabled to false to make it uneditable
-                                                    decoration: InputDecoration(
-                                                      hintText: "Insert Date",
-                                                      enabledBorder: UnderlineInputBorder(
-                                                        borderSide: BorderSide(color: Colors.grey[300]!),
-                                                      ),
-                                                      focusedBorder: UnderlineInputBorder(
-                                                        borderSide: BorderSide(color: Colors.grey[300]!),
-                                                      ),
-                                                    ),
-                                                    style: TextStyle(
-                                                      fontFamily: 'PoppinsRegular',
-                                                      fontSize: 12,
-                                                      color: Colors.grey[800],
-                                                    ),
-                                                    textInputAction: TextInputAction.done,
+                                                      0.6))))
+                                    ]))
+                          ])),
+                  Container(
+                      width: double.maxFinite,
+                      child: Container(
+                          margin: getMargin(top: 18),
+                          padding: getPadding(
+                              left: 30, top: 14, right: 30, bottom: 14),
+                          decoration: AppDecoration.fillGray50,
+                          child: Column(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              children: [
+                                Row(
+                                    mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      Text("Last Transaction",
+                                          overflow: TextOverflow.ellipsis,
+                                          textAlign: TextAlign.left,
+                                          style: AppStyle
+                                              .txtPoppinsSemiBold18Gray800
+                                              .copyWith(
+                                              letterSpacing:
+                                              getHorizontalSize(
+                                                  1.0))),
+                                      GestureDetector(
+                                          onTap: () {
+                                            onTapTxtSmalllabelheavy(
+                                                context);
+                                          },
+                                          child: Padding(
+                                              padding: getPadding(
+                                                  top: 4, bottom: 4),
+                                              child: Text("Details",
+                                                  overflow:
+                                                  TextOverflow.ellipsis,
+                                                  textAlign: TextAlign.left,
+                                                  style: AppStyle
+                                                      .txtPoppinsSemiBold12Bluegray700)))
+                                    ]),
+                                Container(
+                                    width: double.maxFinite,
+                                    child: Container(
+                                        margin:
+                                        getMargin(top: 12, bottom: 15),
+                                        padding: getPadding(
+                                            left: 16,
+                                            top: 15,
+                                            right: 16,
+                                            bottom: 15),
+                                        decoration: AppDecoration.white
+                                            .copyWith(
+                                            borderRadius:
+                                            BorderRadiusStyle
+                                                .roundedBorder12),
+                                        child: Column(
+                                            mainAxisSize: MainAxisSize.min,
+                                            mainAxisAlignment:
+                                            MainAxisAlignment.start,
+                                            children: [
+                                              TextFormField(
+                                                focusNode: FocusNode(),
+                                                autofocus: true,
+                                                controller: dateController,
+                                                enabled: false, // Set enabled to false to make it uneditable
+                                                decoration: InputDecoration(
+                                                  hintText: "Insert Date",
+                                                  enabledBorder: UnderlineInputBorder(
+                                                    borderSide: BorderSide(color: Colors.grey[300]!),
                                                   ),
+                                                  focusedBorder: UnderlineInputBorder(
+                                                    borderSide: BorderSide(color: Colors.grey[300]!),
+                                                  ),
+                                                ),
+                                                style: TextStyle(
+                                                  fontFamily: 'PoppinsRegular',
+                                                  fontSize: 12,
+                                                  color: Colors.grey[800],
+                                                ),
+                                                textInputAction: TextInputAction.done,
+                                              ),
 
-                                                  Padding(
-                                                      padding:
-                                                      getPadding(top: 12),
-                                                      child: ListView.separated(
-                                                          physics:
-                                                          NeverScrollableScrollPhysics(),
-                                                          shrinkWrap: true,
-                                                          separatorBuilder:
-                                                              (context, index) {
-                                                            return SizedBox(
-                                                                height:
-                                                                getVerticalSize(
-                                                                    12));
-                                                          },
-                                                          itemCount: 2,
-                                                          itemBuilder:
-                                                              (context, index) {
-                                                            return HomeItemWidget();
-                                                          })),
-                                                ]))),
-                                  ]))),
-                    ])),
-            bottomNavigationBar: CustomBottomBar(
-            onChanged: (BottomBarEnum type) {
-    Navigator.pushNamed(
-    navigatorKey.currentContext!, getCurrentRoute(type));
-    },
-    ),
+                                              Padding(
+                                                  padding:
+                                                  getPadding(top: 12),
+                                                  child: ListView.separated(
+                                                      physics:
+                                                      NeverScrollableScrollPhysics(),
+                                                      shrinkWrap: true,
+                                                      separatorBuilder:
+                                                          (context, index) {
+                                                        return SizedBox(
+                                                            height:
+                                                            getVerticalSize(
+                                                                12));
+                                                      },
+                                                      itemCount: 2,
+                                                      itemBuilder:
+                                                          (context, index) {
+                                                        return HomeItemWidget();
+                                                      })),
+                                            ]))),
+                              ]))),
+                ])),
+        //         bottomNavigationBar: CustomBottomBar(
+        //         onChanged: (BottomBarEnum type) {
+        // Navigator.pushNamed(
+        // navigatorKey.currentContext!, getCurrentRoute(type));
+        // },
+        // ),
 
-    ),
+      ),
     );
   }
   ///Handling route based on bottom click actions
-  String getCurrentRoute(BottomBarEnum type) {
-    switch (type) {
-      case BottomBarEnum.Home1:
-        return AppRoutes.homeScreen;
-      case BottomBarEnum.History1:
-        return AppRoutes.profileScreen;
-      case BottomBarEnum.Notification1:
-        return "/";
-      case BottomBarEnum.Profile1:
-        return AppRoutes.profileScreen;
-      default:
-        return "/";
-    }
-  }
+  // String getCurrentRoute(BottomBarEnum type) {
+  //   switch (type) {
+  //     case BottomBarEnum.Home1:
+  //       return AppRoutes.homeScreen;
+  //     case BottomBarEnum.History1:
+  //       return AppRoutes.profileScreen;
+  //     case BottomBarEnum.Notification1:
+  //       return "/";
+  //     case BottomBarEnum.Profile1:
+  //       return AppRoutes.profileScreen;
+  //     default:
+  //       return "/";
+  //   }
+  // }
 
   ///Handling page based on route
-  Widget getCurrentPage(String currentRoute) {
-    switch (currentRoute) {
-      case AppRoutes.homeScreen:
-      default:
-        return DefaultWidget();
-    }
-  }
+  // Widget getCurrentPage(String currentRoute) {
+  //   switch (currentRoute) {
+  //     case AppRoutes.homeScreen:
+  //     default:
+  //       return DefaultWidget();
+  //   }
+  // }
 
 
   onTapWater(BuildContext context) {

@@ -160,9 +160,9 @@ class _NotificationScreenState extends State<NotificationScreen> {
                     physics: BouncingScrollPhysics(),
                     shrinkWrap: true,
                     separatorBuilder: (
-                      context,
-                      index,
-                    ) {
+                        context,
+                        index,
+                        ) {
                       return SizedBox(
                         height: getVerticalSize(
                           26,
@@ -179,38 +179,38 @@ class _NotificationScreenState extends State<NotificationScreen> {
             ],
           ),
         ),
-        bottomNavigationBar: CustomBottomBar(
-          onChanged: (BottomBarEnum type) {
-            Navigator.pushNamed(
-                navigatorKey.currentContext!, getCurrentRoute(type));
-          },
-        ),
+        // bottomNavigationBar: CustomBottomBar(
+        //   onChanged: (BottomBarEnum type) {
+        //     Navigator.pushNamed(
+        //         navigatorKey.currentContext!, getCurrentRoute(type));
+        //   },
+        // ),
       ),
     );
   }
 
-  ///Handling route based on bottom click actions
-  String getCurrentRoute(BottomBarEnum type) {
-    switch (type) {
-      case BottomBarEnum.Home1:
-        return AppRoutes.homeScreen;
-      case BottomBarEnum.History1:
-        return "/";
-      case BottomBarEnum.Notification1:
-        return "/";
-      case BottomBarEnum.Profile1:
-        return "/";
-      default:
-        return "/";
-    }
-  }
+///Handling route based on bottom click actions
+// String getCurrentRoute(BottomBarEnum type) {
+//   switch (type) {
+//     case BottomBarEnum.Home1:
+//       return AppRoutes.homeScreen;
+//     case BottomBarEnum.History1:
+//       return "/";
+//     case BottomBarEnum.Notification1:
+//       return "/";
+//     case BottomBarEnum.Profile1:
+//       return "/";
+//     default:
+//       return "/";
+//   }
+// }
 
-  ///Handling page based on route
-  Widget getCurrentPage(String currentRoute) {
-    switch (currentRoute) {
-      case AppRoutes.homeScreen:
-      default:
-        return DefaultWidget();
-    }
-  }
+///Handling page based on route
+// Widget getCurrentPage(String currentRoute) {
+//   switch (currentRoute) {
+//     case AppRoutes.homeScreen:
+//     default:
+//       return DefaultWidget();
+//   }
+// }
 }
